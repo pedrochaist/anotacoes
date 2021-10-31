@@ -1,0 +1,476 @@
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Repositório vazio Git inicializado em  /home/pedro/Área de Trabalho/Minicurso Git e Github/teste_merge/.git/
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ ls
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ ls -a
+.  ..  .git
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ nano a1.txt
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ ls
+a1.txt
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ ls -a
+.  ..  a1.txt  .git
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git status
+No ramo master
+
+No commits yet
+
+Arquivos não monitorados:
+  (utilize "git add <arquivo>..." para incluir o que será submetido)
+	a1.txt
+
+nada adicionado ao envio mas arquivos não registrados estão presentes (use "git add" to registrar)
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git add a1.txt
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git status
+No ramo master
+
+No commits yet
+
+Mudanças a serem submetidas:
+  (utilize "git rm --cached <arquivo>..." para não apresentar)
+	new file:   a1.txt
+
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git rm --cached .
+fatal: not removing '.' recursively without -r
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git rm --cached a1.txt 
+rm 'a1.txt'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git status
+No ramo master
+
+No commits yet
+
+Arquivos não monitorados:
+  (utilize "git add <arquivo>..." para incluir o que será submetido)
+	a1.txt
+
+nada adicionado ao envio mas arquivos não registrados estão presentes (use "git add" to registrar)
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git add .
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git status
+No ramo master
+
+No commits yet
+
+Mudanças a serem submetidas:
+  (utilize "git rm --cached <arquivo>..." para não apresentar)
+	new file:   a1.txt
+
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git add --help
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git rm --cached a1.txt 
+rm 'a1.txt'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git add -v .
+add 'a1.txt'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git add --help
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git status
+No ramo master
+
+No commits yet
+
+Mudanças a serem submetidas:
+  (utilize "git rm --cached <arquivo>..." para não apresentar)
+	new file:   a1.txt
+
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git commit -m "criei o arquivo a1.txt e adicionei conteúdo nele"
+[master (root-commit) da739ad] criei o arquivo a1.txt e adicionei conteúdo nele
+ 1 file changed, 2 insertions(+)
+ create mode 100644 a1.txt
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ cat a1.txt 
+conteúdo 1
+conteúdo 2
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch
+* master
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch --help
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch testepedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch
+* master
+  teste
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git status
+No ramo master
+nothing to commit, working tree clean
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout teste
+Switched to branch 'teste'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git status
+No ramo teste
+nothing to commit, working tree clean
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git log
+commit da739add96f1aaf29d31df8e8e733a3f8e95c730 (HEAD -> teste, master)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 11:44:17 2021 -0300
+
+    criei o arquivo a1.txt e adicionei conteúdo nele
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch -d teste
+error: Cannot delete branch 'teste' checked out at '/home/pedro/Área de Trabalho/Minicurso Git e Github/teste_merge'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout master 
+Switched to branch 'master'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch -d teste
+Deleted branch teste (was da739ad).
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch
+* master
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch teste
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch
+* master
+  teste
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git -d teste
+unknown option: -d
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch -d teste
+Deleted branch teste (was da739ad).
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch teste master
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch
+* master
+  teste
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout --help
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout teste
+Switched to branch 'teste'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git status
+No ramo teste
+nothing to commit, working tree clean
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git log
+commit da739add96f1aaf29d31df8e8e733a3f8e95c730 (HEAD -> teste, master)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 11:44:17 2021 -0300
+
+    criei o arquivo a1.txt e adicionei conteúdo nele
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ nano a1.txt 
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ cat a1.txt 
+conteúdo 1
+conteúdo 2
+conteúdo 3
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git status
+No ramo teste
+Changes not staged for commit:
+  (utilize "git add <arquivo>..." para atualizar o que será submetido)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   a1.txt
+
+nenhuma modificação adicionada à submissão (utilize "git add" e/ou "git commit -a")
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git add .
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git merge --help
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout master
+M	a1.txt
+Switched to branch 'master'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git merge teste
+Already up to date.
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git log
+commit da739add96f1aaf29d31df8e8e733a3f8e95c730 (HEAD -> master, teste)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 11:44:17 2021 -0300
+
+    criei o arquivo a1.txt e adicionei conteúdo nele
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git status
+No ramo master
+Mudanças a serem submetidas:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   a1.txt
+
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git commit -m "merge feito"
+[master 1f9c3b0] merge feito
+ 1 file changed, 1 insertion(+)
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git log
+commit 1f9c3b054a0edb5d534b9c57a95dafd17d68054d (HEAD -> master)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:06:38 2021 -0300
+
+    merge feito
+
+commit da739add96f1aaf29d31df8e8e733a3f8e95c730 (teste)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 11:44:17 2021 -0300
+
+    criei o arquivo a1.txt e adicionei conteúdo nele
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git reset da739ad
+Unstaged changes after reset:
+M	a1.txt
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git log
+commit da739add96f1aaf29d31df8e8e733a3f8e95c730 (HEAD -> master, teste)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 11:44:17 2021 -0300
+
+    criei o arquivo a1.txt e adicionei conteúdo nele
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout teste
+M	a1.txt
+Switched to branch 'teste'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git reset --hard da739ad
+HEAD is now at da739ad criei o arquivo a1.txt e adicionei conteúdo nele
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout master 
+Switched to branch 'master'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout teste
+Switched to branch 'teste'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout master 
+M	a1.txt
+Switched to branch 'master'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout teste
+M	a1.txt
+Switched to branch 'teste'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git add .
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git log
+commit da739add96f1aaf29d31df8e8e733a3f8e95c730 (HEAD -> teste, master)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 11:44:17 2021 -0300
+
+    criei o arquivo a1.txt e adicionei conteúdo nele
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git status
+No ramo teste
+Mudanças a serem submetidas:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   a1.txt
+
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git commit -m "inserção 3 em a1.txt"[teste 30eef5c] inserção 3 em a1.txt
+ 1 file changed, 1 insertion(+)
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout master 
+Switched to branch 'master'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git status
+No ramo master
+nothing to commit, working tree clean
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git log
+commit da739add96f1aaf29d31df8e8e733a3f8e95c730 (HEAD -> master)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 11:44:17 2021 -0300
+
+    criei o arquivo a1.txt e adicionei conteúdo nele
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout teste 
+Switched to branch 'teste'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git log
+commit 30eef5c99172e97cbbaa327df0eb2748526bdd59 (HEAD -> teste)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:09:34 2021 -0300
+
+    inserção 3 em a1.txt
+
+commit da739add96f1aaf29d31df8e8e733a3f8e95c730 (master)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 11:44:17 2021 -0300
+
+    criei o arquivo a1.txt e adicionei conteúdo nele
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout master 
+Switched to branch 'master'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git merge teste
+Updating da739ad..30eef5c
+Fast-forward
+ a1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git status
+No ramo master
+nothing to commit, working tree clean
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git lo
+git: 'lo' não é um comando git. Veja 'git --help'.
+
+The most similar commands are
+	log
+	clone
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git log
+commit 30eef5c99172e97cbbaa327df0eb2748526bdd59 (HEAD -> master, teste)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:09:34 2021 -0300
+
+    inserção 3 em a1.txt
+
+commit da739add96f1aaf29d31df8e8e733a3f8e95c730
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 11:44:17 2021 -0300
+
+    criei o arquivo a1.txt e adicionei conteúdo nele
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch
+* master
+  teste
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch -d teste
+Deleted branch teste (was 30eef5c).
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch
+* master
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch teste
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git che
+checkout      cherry        cherry-pick   
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout 
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git branch
+* master
+  teste
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout teste 
+Switched to branch 'teste'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git status
+No ramo teste
+Changes not staged for commit:
+  (utilize "git add <arquivo>..." para atualizar o que será submetido)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   a1.txt
+
+nenhuma modificação adicionada à submissão (utilize "git add" e/ou "git commit -a")
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git add . && git commit -m "modificação em conteúdo 2"
+[teste 01ff076] modificação em conteúdo 2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git log
+commit 01ff0764906720aabe760ab403a415322a849d3c (HEAD -> teste)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:14:24 2021 -0300
+
+    modificação em conteúdo 2
+
+commit 30eef5c99172e97cbbaa327df0eb2748526bdd59 (master)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:09:34 2021 -0300
+
+    inserção 3 em a1.txt
+
+commit da739add96f1aaf29d31df8e8e733a3f8e95c730
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 11:44:17 2021 -0300
+
+    criei o arquivo a1.txt e adicionei conteúdo nele
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout master
+Switched to branch 'master'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git merge teste
+Updating 30eef5c..01ff076
+Fast-forward
+ a1.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout teste
+Switched to branch 'teste'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git add . && git commit -m "modificação em conteúdo 2 novamente"
+[teste 438de9b] modificação em conteúdo 2 novamente
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git status
+No ramo teste
+nothing to commit, working tree clean
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git log
+commit 438de9b21373f5a06fe6d779c604be6348f6d9c9 (HEAD -> teste)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:19:15 2021 -0300
+
+    modificação em conteúdo 2 novamente
+
+commit 01ff0764906720aabe760ab403a415322a849d3c (master)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:14:24 2021 -0300
+
+    modificação em conteúdo 2
+
+commit 30eef5c99172e97cbbaa327df0eb2748526bdd59
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:09:34 2021 -0300
+
+    inserção 3 em a1.txt
+
+commit da739add96f1aaf29d31df8e8e733a3f8e95c730
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 11:44:17 2021 -0300
+
+    criei o arquivo a1.txt e adicionei conteúdo nele
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout master 
+Switched to branch 'master'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout teste 
+Switched to branch 'teste'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout master 
+Switched to branch 'master'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git merge teste
+Updating 01ff076..438de9b
+Fast-forward
+ a1.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git nano a1.txt
+git: 'nano' não é um comando git. Veja 'git --help'.
+
+The most similar commands are
+	annotate
+	daemon
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ nano a1.txt 
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout teste
+M	a1.txt
+Switched to branch 'teste'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout master
+M	a1.txt
+Switched to branch 'master'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git add . && git commit -m "modificação feita na branch master"
+[master 38276af] modificação feita na branch master
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout teste
+Switched to branch 'teste'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ nano a1.txt 
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git add . && git commit -m "modificação feita na branch teste"
+[teste af01785] modificação feita na branch teste
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git log
+commit af01785cd46d7494cf40111f8c36137db212e9ae (HEAD -> teste)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:31:53 2021 -0300
+
+    modificação feita na branch teste
+
+commit 438de9b21373f5a06fe6d779c604be6348f6d9c9
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:19:15 2021 -0300
+
+    modificação em conteúdo 2 novamente
+
+commit 01ff0764906720aabe760ab403a415322a849d3c
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:14:24 2021 -0300
+
+    modificação em conteúdo 2
+
+commit 30eef5c99172e97cbbaa327df0eb2748526bdd59
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:09:34 2021 -0300
+
+    inserção 3 em a1.txt
+
+commit da739add96f1aaf29d31df8e8e733a3f8e95c730
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 11:44:17 2021 -0300
+
+    criei o arquivo a1.txt e adicionei conteúdo nele
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git checkout master
+Switched to branch 'master'
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git log
+commit 38276afad19828c431e8cbb3116d30b2381874e7 (HEAD -> master)
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:30:42 2021 -0300
+
+    modificação feita na branch master
+
+commit 438de9b21373f5a06fe6d779c604be6348f6d9c9
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:19:15 2021 -0300
+
+    modificação em conteúdo 2 novamente
+
+commit 01ff0764906720aabe760ab403a415322a849d3c
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:14:24 2021 -0300
+
+    modificação em conteúdo 2
+
+commit 30eef5c99172e97cbbaa327df0eb2748526bdd59
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 12:09:34 2021 -0300
+
+    inserção 3 em a1.txt
+
+commit da739add96f1aaf29d31df8e8e733a3f8e95c730
+Author: pedrochais <pedrorocha.bou@gmail.com>
+Date:   Fri Oct 29 11:44:17 2021 -0300
+
+    criei o arquivo a1.txt e adicionei conteúdo nele
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ git merge teste
+Mesclagem automática de a1.txt
+CONFLITO (conteúdo): conflito de mesclagem em a1.txt
+Automatic merge failed; fix conflicts and then commit the result.
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ cat a1.txt 
+conteúdo 1
+<<<<<<< HEAD
+alteração feita na branch master
+=======
+modificação feita na branch teste
+>>>>>>> teste
+conteúdo 3
+pedro@pedro-nb:~/Área de Trabalho/Minicurso Git e Github/teste_merge$ 

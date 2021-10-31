@@ -1,0 +1,61 @@
+fetch -> solicita ao repositório as últimas atualizações dos outros membros (faz a cópia das alterações do remoto pro local) (o merge também tem essa função) / fetch (buscar alterações) e o merge (mesclar as alterações) (pulling faz as duas coisas)
+
+checking out -> processo que o git usa para alterar o working tree para um certo ponto do repositório
+
+master -> linha principal do desenvolvimento
+
+HEAD -> último commit que se está trabalhando
+
+no diretório /.git está o repositório local do desenvolvedor
+
+=========================================================================================
+
+# apt install git
+git --version
+
+configurando
+git config --global user.name "pedrochais"
+git config --global user.email "pedrorocha.bou@gmail.com"
+git config --list
+
+=========================================================================================
+
+iniciando o git
+git init
+
+git add . || nome do arquivo || -A (colocar o arquivo na área commitável)
+
+git commit -m <mensagem> (-m de mensagem)
+					 -a (commitar tudo)
+					 --amend (emenda commit anterior)
+
+git log (listar todos os commits feitos no branch)
+
+git branch (lista todos os branches do projeto)
+
+git reset --soft (volta para o commit desejado mas mantém todas as modificações)
+	 			  --mixed ()
+	  			--hard (volta para o commit desejado mas exclui todas as modificações)
+	  			
+git checkout nome_branch (muda para essa branch)
+						 HEAD -- nome_arquivo (voltar para alguma versão, arquivo, branch, commit)
+
+git diff (ver as modificações)
+				 --name-only
+				 
+git remote add origin link (adicionar o repositório remoto no repositório local)
+
+git push origin master (enviar as modificações para o repositório remoto)
+
+git revert código_commit (volta pro commit mas mantém as alterações e arquivos)
+						--no-edit 
+
+git push origin :nome_branch (remover branch)
+
+git branch -D nome_branch (remover branch local)
+
+git pull origin master (carregar as modificações do repositório remoto)
+
+=========================================================================================
+
+git add . && git c "fixing"
